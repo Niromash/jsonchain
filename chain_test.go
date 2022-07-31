@@ -41,6 +41,7 @@ func TestJsonChain_AppendFromBytes(t *testing.T) {
 	chain := NewJsonChain[string, string]()
 	if err := chain.AppendFromBytes([]byte(`{"name":"Mattéo"}`)); err != nil {
 		t.Error("JsonChain.Append failed")
+		return
 	}
 	value, err := chain.GetWithError("name")
 	if err != nil {
